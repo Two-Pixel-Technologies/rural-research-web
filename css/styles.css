@@ -681,10 +681,19 @@ p {
   font-size: var(--fs-small);
   font-weight: 500;
   color: var(--color-primary);
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
 
 .project-list-item__link:hover {
   text-decoration: underline;
+}
+
+/* Make entire card clickable */
+.project-list-item {
+  cursor: pointer;
+  position: relative;
 }
 
 /* Two-column layout on larger screens */
