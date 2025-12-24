@@ -195,7 +195,9 @@ p {
 
 /* When mobile menu is open, show solid background */
 .nav:has(.nav__menu--open) {
-  background-color: var(--color-white);
+  background-color: var(--color-white) !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
 }
 
 .nav__container {
@@ -297,6 +299,8 @@ p {
     gap: var(--space-md);
     transform: translateX(100%);
     transition: transform var(--transition-normal);
+    z-index: 999;
+    overflow-y: auto;
   }
   
   .nav__menu--open {
