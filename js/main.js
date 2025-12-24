@@ -165,26 +165,22 @@ function scrollToTopOnLoad() {
 }
 
 /**
- * Navbar Shadow on Scroll
- * Adds shadow to navbar when scrolled
+ * Navbar Background on Scroll
+ * Makes navbar opaque when scrolled down
  */
-function initNavShadow() {
+function initNavScroll() {
   const nav = document.querySelector('.nav');
   
   if (!nav) return;
 
-  let lastScroll = 0;
-
   window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
     
-    if (currentScroll > 10) {
-      nav.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+    if (currentScroll > 50) {
+      nav.classList.add('nav--scrolled');
     } else {
-      nav.style.boxShadow = 'none';
+      nav.classList.remove('nav--scrolled');
     }
-    
-    lastScroll = currentScroll;
   }, { passive: true });
 }
 
@@ -220,7 +216,7 @@ function init() {
   initSmoothScroll();
   initScrollAnimations();
   initActiveNavState();
-  initNavShadow();
+  initNavScroll();
   initProjectCards();
 }
 
